@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth, googleProvider, db } from '../firebase';
+import { auth, db, googleProvider } from '../firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -38,7 +38,16 @@ export const AuthProvider = ({ children }) => {
   };
 
   const loginWithGoogle = async () => {
-    return signInWithPopup(auth, googleProvider);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      return result;
+    } catch (error) {
+      // Handle Cross-Origin-Opener-Policy and other popup-related errors
+      if (error.code === 'auth/popup-blocked' || error.code === 'auth/popup-closed-by-user') {
+        throw new Error('Popup was blocked or closed. Please allow popups for this site and try again.');
+      }
+      throw error;
+    }
   };
 
   const logout = async () => {

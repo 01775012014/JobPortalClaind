@@ -10,6 +10,7 @@ import MainRout from './MainRout/MainRout.jsx';
 import Home from './Page/Home.jsx';
 import Login from './Page/Login.jsx';
 import Register from './Page/Register.jsx';
+import Dashboard from './Page/Dashboard.jsx';
 import { AuthProvider } from './context/AuthContext';
 
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register/>
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard/>
       }
     ]
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, Briefcase, Chrome } from 'lucide-react';
 import Lottie from "lottie-react";
 import loginAnimation from "../Loti-animesun/Login.json"
@@ -78,7 +78,7 @@ const Login = () => {
                 </div>
 
                 {/* Login Card */}
-                <div className="bg-white bg-opacity-80 lg:w-[40%] backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white border-opacity-20">
+                <div className="bg-gray-400 bg-opacity-80 lg:w-[40%] backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white border-opacity-20">
                     {error && (
                         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm flex items-center gap-2">
                             <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
@@ -97,7 +97,7 @@ const Login = () => {
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
-                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white bg-opacity-70"
+                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200  bg-opacity-70"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     disabled={loading}
@@ -115,7 +115,7 @@ const Login = () => {
                                 <input
                                     type={showPassword ? 'text' : 'password'}
                                     placeholder="Enter your password"
-                                    className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white bg-opacity-70"
+                                    className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200  bg-opacity-70"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     disabled={loading}

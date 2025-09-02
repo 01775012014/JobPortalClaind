@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, Briefcase, Chrome, Check, X } from 'lucide-react';
 import Lottie from "lottie-react";
 import CreatAcount from "../Loti-animesun/Creat-account.json"
