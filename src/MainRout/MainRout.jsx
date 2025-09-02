@@ -7,7 +7,10 @@ const MainRout = () => {
     return (
         <div>
             <Navbar/>
-            <Outlet/> 
+            <div className='mt-14'>
+                 <Outlet/> 
+            </div>
+           
             <Footer/>
         </div>
     );
