@@ -52,9 +52,15 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'Find Jobs', path: '/jobs', icon: Search },
-    { name: 'Companies', path: '/companies', icon: Building },
-    { name: 'Post a Job', path: '/post-job', icon: FileText, authRequired: true, role: 'employer' },
+    { name: 'All Jobs', path: '/jobs', icon: Briefcase },
+    { name: 'My Jobs', path: '/my-jobs', icon: Building },
+    { name: 'My Applications', path: '/companies', icon: Building },
+    { name: 'Add Job', path: '/addjobs', icon: FileText, authRequired: true, role: 'employer' },
   ];
+
+  // Navbar এ থাকবে → Home, All Jobs, Add Job (Employer), My Jobs, My Applications (Seeker), Login/Logout
+
+// Employer লগইন করলে → Add Job, My Jobs, Review Applications
 
   return (
     <nav className={`fixed w-full  top-0 z-50 transition-all duration-300 ${
